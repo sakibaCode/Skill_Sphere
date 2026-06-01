@@ -1,6 +1,21 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-:root {
+
+.bg-notebook {
+  background-color: #f5f0e8;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(180, 160, 120, 0.35) 27px,
+      rgba(180, 160, 120, 0.35) 28px
+    );
+  /* Optional: paper texture via SVG noise */
+  background-blend-mode: multiply;
+}
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +38,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
