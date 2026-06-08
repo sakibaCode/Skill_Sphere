@@ -21,7 +21,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="navbar bg-[#f5f0e8] shadow-sm px-4 md:px-8">
+    <div className="navbar sticky top-0 z-50 bg-[#f5f0e8] shadow-sm px-4 md:px-8">
       {/* Logo */}
       <div className="navbar-start">
         <Link href="/" className="btn btn-ghost text-xl">
