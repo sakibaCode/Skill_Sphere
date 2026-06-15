@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { CiStar } from "react-icons/ci";
-
+import Image from "next/image";
 
 export default function Home() {
   const [courses, setCourses] = useState([]);
@@ -62,6 +62,15 @@ export default function Home() {
               key={course.id}
               className="card bg-base-100 shadow-md hover:shadow-xl transition duration-300"
             >
+              <figure>
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  width={500}
+                  height={300}
+                  className="w-full h-52 object-cover"
+                />
+              </figure>
               <div className="card-body">
                 <h2 className="card-title">{course.title}</h2>
 

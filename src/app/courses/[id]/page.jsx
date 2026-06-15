@@ -1,34 +1,77 @@
-import { notFound } from "next/navigation";
+"use client";
 
-async function getCourse(id) {
-  const res = await fetch("http://localhost:3000/courses.json", {
-    cache: "no-store",
-  });
+import { useEffect, useState } from "react";
+import { useParams, usePathname, useRouter } from "next/navigation";
+import { useSession } from "@/app/lib/auth-client";
 
-  const courses = await res.json();
+export default function CourseDetailsPage() {
+  const { id } = useParams();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  return courses.find((course) => course.id === Number(id));
-}
+  const { data: session, isPending } = useSession();
 
-export default async function CourseDetailsPage({ params }) {
-  const { id } = await params;
+  const [course, setCourse] = useState(null);
+  const [courseLoading, setCourseLoading] = useState(true);
 
-  const course = await getCourse(id);
+  useEffect(() => {
+    if (!isPending && !session?.user) {
+      router.push(`/sign-in?redirect=${pathname}`);
+    }
+  }, [isPending, session, router, pathname]);
+
+  useEffect(() => {
+    async function getCourse() {
+      try {
+        const res = await fetch("/courses.json");
+        const courses = await res.json();
+
+        const foundCourse = courses.find(
+          (course) => course.id === Number(id)
+        );
+
+        setCourse(foundCourse);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setCourseLoading(false);
+      }
+    }
+
+    if (session?.user) {
+      getCourse();
+    }
+  }, [id, session]);
+
+  if (isPending || courseLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
+
+  if (!session?.user) {
+    return null;
+  }
 
   if (!course) {
-    notFound();
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h2 className="text-2xl font-bold">Course not found</h2>
+      </div>
+    );
   }
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-12">
-      {/* Hero Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-          {/* <img
+          <img
             src={course.image}
             alt={course.title}
             className="w-full h-[400px] object-cover rounded-2xl shadow-lg"
-          /> */}
+          />
         </div>
 
         <div>
@@ -62,7 +105,7 @@ export default async function CourseDetailsPage({ params }) {
 
             <div className="flex gap-2">
               <span className="font-semibold">Rating:</span>
-              <span> {course.rating}</span>
+              <span>{course.rating}</span>
             </div>
           </div>
 
@@ -72,7 +115,7 @@ export default async function CourseDetailsPage({ params }) {
         </div>
       </div>
 
- 
+  
     </section>
   );
 }
