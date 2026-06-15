@@ -10,19 +10,9 @@
     "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     "category": "Development"
   },
+ 
   {
     "id": 2,
-    "title": "UI/UX Design Masterclass",
-    "instructor": "Sarah Wilson",
-    "duration": "15 hours",
-    "rating": 4.9,
-    "level": "Beginner",
-    "description": "Master user interface and user experience design principles using modern design tools.",
-    "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb",
-    "category": "Design"
-  },
-  {
-    "id": 3,
     "title": "Digital Marketing Fundamentals",
     "instructor": "Michael Brown",
     "duration": "12 hours",
@@ -33,7 +23,7 @@
     "category": "Marketing"
   },
   {
-    "id": 4,
+    "id": 3,
     "title": "Data Science with Python",
     "instructor": "Emily Davis",
     "duration": "25 hours",
@@ -44,7 +34,7 @@
     "category": "Data Science"
   },
   {
-    "id": 5,
+    "id": 4,
     "title": "Graphic Design Essentials",
     "instructor": "David Miller",
     "duration": "10 hours",
@@ -55,7 +45,7 @@
     "category": "Design"
   },
   {
-    "id": 6,
+    "id": 5,
     "title": "Mobile App Development with Flutter",
     "instructor": "Jessica Taylor",
     "duration": "18 hours",
@@ -66,7 +56,7 @@
     "category": "Development"
   },
   {
-    "id": 7,
+    "id": 6,
     "title": "Cybersecurity Basics",
     "instructor": "Robert Johnson",
     "duration": "14 hours",
@@ -75,16 +65,5 @@
     "description": "Understand cybersecurity threats, network security, and ethical hacking fundamentals.",
     "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
     "category": "Cybersecurity"
-  },
-  {
-    "id": 8,
-    "title": "Artificial Intelligence & Machine Learning",
-    "instructor": "Lisa Anderson",
-    "duration": "30 hours",
-    "rating": 5.0,
-    "level": "Advanced",
-    "description": "Explore neural networks, deep learning, and practical AI applications using Python.",
-    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995",
-    "category": "Artificial Intelligence"
   }
 ]

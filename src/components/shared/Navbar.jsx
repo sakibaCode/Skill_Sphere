@@ -61,7 +61,7 @@ const Navbar = () => {
                 <span className="text-xs text-gray-500">{user.email}</span>
               </li>
               <li>
-                <Link href="/dashboard">Dashboard</Link>
+                <Link href="/profile">Dashboard</Link>
               </li>
               <li>
                 <button onClick={handleSignOut} className="text-red-600">
