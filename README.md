@@ -65,6 +65,10 @@ The main purpose of SkillSphere is to create a simple learning platform where st
 - Update Profile page
 - Not Found page
 
+## Preview 
+
+<img width="1912" height="878" alt="image" src="https://github.com/user-attachments/assets/6e0d45d3-e7fb-41ba-bc4d-fdf49521a237" />
+
 ## Environment Variables
 
 The project uses environment variables for authentication and database connection.
@@ -74,3 +78,4 @@ NEXT_PUBLIC_BASE_URL=
 BETTER_AUTH_SECRET=
 BETTER_AUTH_URL=
 MONGODB_URL=
+
